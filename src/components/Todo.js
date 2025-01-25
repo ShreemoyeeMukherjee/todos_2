@@ -27,8 +27,24 @@ function Todo()
 
         }
         useEffect(() => {
+         console.log("Updated Task Data" ,taskData);
          console.log("Updated taskArray:", taskArray);
-     }, [taskArray]);
+     }, [taskArray,taskData]);
+
+     useEffect(()=>{
+         try{
+            if(taskData.id === '' || taskData.name === ''|| taskData.description  === '')
+            {
+               throw new Error("All the fields should be filled")
+            }
+         }
+          catch(e)
+          {
+            console.log(e.message);
+              alert(e.message);
+          }
+     },[taskData])
+         
         function handleChange(e)
         {
          const {name, value} = e.target;
