@@ -47,8 +47,8 @@ function onSubmit(e)
 
     return(<div>
         <form onSubmit = {onSubmit}>
-               <input type  = "text"  name = "id" id = "taskid" onChange= {onChange} placeholder = "id"/>
-               <input type  = "text"  name = "name" id = "taskname" onChange= {onChange} placeholder = "name"/>
+               <input type  = "text"  name = "id" id = "taskid" onChange= {()=>{onChange(taskData,settaskData)}} placeholder = "id"/>
+               <input type  = "text"  name = "name" id = "taskname" onChange= {()=>{onChange(task,taskData,settaskData,taskArray,settaskArray)}} placeholder = "name"/>
                              
                <input type = "text"    name = "description" id = "taskdescription" onChange = {onChange} placeholder = "description"/>
                <input type = "submit" value = "Submit" />

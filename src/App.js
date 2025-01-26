@@ -1,12 +1,13 @@
 //import logo from './logo.svg';
 import './App.css';
-import Todo from './components/Todo.js'
-console.log("app");
+
+import { Root } from './components/Root.js';
 
 function App() {
   return (
     <div>
-  <Todo/>
+      <h1>Hi</h1>
+      <Root/>
   </div>
   );
 }

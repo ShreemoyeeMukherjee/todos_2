@@ -1,15 +1,17 @@
 import { useState ,useEffect } from "react";
-// console.log(
-//    "hi"
-// );
+
 import TodoForm from './TodoForm.js'
 import addTask from "./addTask.js";
 
 import TodoList from "./TodoList.js";
+
 function Todo()
 {
+   
      const[taskData, settaskData] = useState({});
      const[taskArray,settaskArray] = useState([]);
+     const usertasksarray = [];
+     
 
         function handleSubmit(e)
         {
@@ -29,6 +31,7 @@ function Todo()
         useEffect(() => {
          console.log("Updated Task Data" ,taskData);
          console.log("Updated taskArray:", taskArray);
+         
      }, [taskArray,taskData]);
 
      useEffect(()=>{
@@ -44,6 +47,17 @@ function Todo()
               alert(e.message);
           }
      },[taskData])
+   //   useEffect(()=>{
+   //    let i= taskArray.length;
+   //    if(i>0){
+   //    const task = taskArray[i-1];
+   //    task.classList.add(taskstyle);
+
+   //    }
+
+
+        
+   //   },[taskArray])
          
         function handleChange(e)
         {

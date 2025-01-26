@@ -20,11 +20,7 @@ function onSubmit(e,task,taskData,settaskData,taskArray,settaskArray)
             })
         })
         let i = 0;
-        console.log("Task updation");
-        for(i = 0;i<taskArray.length;i++)
-        {
-                  console.log(taskArray[i])
-        }
+       
         
     }
     

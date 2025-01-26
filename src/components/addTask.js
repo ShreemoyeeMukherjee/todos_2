@@ -1,5 +1,5 @@
 
-console.log("hell02");
+
 const addTask = (taskArray,settaskArray, taskData,settaskData)=>{
     console.log(taskArray);
     console.log(taskData);
