@@ -1,30 +1,22 @@
-import deleteTask from "./deleteTask.js";
+ // first we will create a todo form
+ console.log("hello3");
 
-import { useState } from "react";
-import UpdateTaskform from "./UpdateTaskform.js";
-const TodoItem = ({task,taskData,settaskData,taskArray,settaskArray})=>{
+ function TodoForm({taskData,handleChange, handleSubmit})
+ {
+      return(
+         <div>
+            <form onSubmit = {handleSubmit}>
+               <input type  = "text"  name = "id" id = "taskid" onChange= {handleChange} placeholder = "id"/>
+               <input type  = "text"  name = "name" id = "taskname" onChange= {handleChange} placeholder = "name"/>
+                             
+               <input type = "text"    name = "description" id = "taskdescription" onChange = {handleChange} placeholder = "description"/>
+               <input type = "submit" value = "Submit" />
 
-     
-     const [updateflag, setupdateFlag] = useState(0);
-     function handleChange(e)
-     {
-        setupdateFlag(!updateflag);
-        settaskData(task);
-     }
 
-    return(
-        <div>
-           <ul>
-                <li key = {task.id}>
-                    <h3>{task.name}</h3>
-                    <p>{task.description}</p>
-                    <button onClick={handleChange} >Edit</button>
-                    <button onClick={()=>deleteTask (task,taskData,settaskData,taskArray,settaskArray)}>Delete</button>
-                </li>
-                </ul>
-                {updateflag && <UpdateTaskform  task = {task} taskData = {taskData} settaskData = {settaskData} taskArray = {taskArray} settaskArray = {settaskArray}/>}
-            
-        </div>
-    )
-}
-export default TodoItem;
+
+
+            </form>
+         </div>
+      )
+ }
+ export default TodoForm;

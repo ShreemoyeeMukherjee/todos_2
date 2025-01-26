@@ -1,16 +1,18 @@
 import { UserContext } from "./Root.js"
-import { useContext,useEffect } from "react";
+import { useContext,useEffect,useState } from "react";
 
-
+import Todo from "./Todo.js";
 const Login = ()=>{
     const {loggedin_user,setloggedin_user,userArray} = useContext(UserContext);
-
+   const [isLogin,setisLogin]  = useState(0);
       let user = {
         'email':'',
         'password':'',
       }
       function Find(registered_user)
       {
+        console.log("registered user",registered_user);
+        console.log("loginuser",user);
         return(registered_user.email === user.email && registered_user.password === user.password )
       }
       function onChange(e)
@@ -40,7 +42,12 @@ const Login = ()=>{
 
       }
       useEffect(()=>{
+        if(JSON.stringify(loggedin_user) != '{}'){
          console.log("Logged in user",loggedin_user);
+         if(isLogin == 0)
+         setisLogin(!isLogin);
+        }
+
       },[loggedin_user])
 
 
@@ -51,6 +58,8 @@ const Login = ()=>{
                  <input type = "password" id = "upassword" name = "password" placeholder="password" onChange={onChange}/>
                 <button type = "submit">Submit</button>
             </form>
+            {isLogin && <Todo/>}
+            
         </div>
       )
 

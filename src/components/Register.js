@@ -6,7 +6,7 @@ import Login from "./Login.js"
 
 const Register = ()=>{
     const context = useContext(UserContext);
-    console.log(context)
+    //console.log(context)
     const {currentUser,setcurrentUser,userArray,setuserArray} = context||{}
     function onChange(e)
     {
@@ -41,8 +41,9 @@ const Register = ()=>{
 
     },[currentUser])
     useEffect(()=>{
-        
+         if(userArray.length !== 0){
           console.log("cuurentuser after updation",userArray)
+         }
     },[userArray])
     return(
         

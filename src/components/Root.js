@@ -7,19 +7,23 @@ const initialUser=  {
     'email':'a1@gmail.com',
     'password':'a1'
 }
+// const initial_user_task_array = [{
+//     'user':initialUser.id,
+//     'tasks':[],
+// }]
 const UserContext = createContext();
-console.log(UserContext);
-console.log("hi")
+
 const Root = ()=>{
-    console.log("in root");
+    
     const [currentUser,setcurrentUser] =  useState(initialUser);
     const [userArray,setuserArray] = useState([]);
     const [loggedin_user,setloggedin_user] = useState({});
-    console.log(currentUser,userArray,loggedin_user);
+    const [usertaskarray,setusertaskarray] = useState([])
+    
     
     return(
         <div>
-            <UserContext.Provider value = {{currentUser,setcurrentUser,userArray,setuserArray,loggedin_user,setloggedin_user}} >
+            <UserContext.Provider value = {{currentUser,setcurrentUser,userArray,setuserArray,loggedin_user,setloggedin_user,usertaskarray,setusertaskarray}} >
                <Register/>  
             </UserContext.Provider>
         </div>

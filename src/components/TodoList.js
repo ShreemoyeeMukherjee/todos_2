@@ -1,9 +1,9 @@
 import TodoItem from "./TodoItem";
-const TodoList = ({taskData,settaskData,taskArray,settaskArray})=>{
+const TodoList = ({taskData,settaskData,taskArray,settaskArray,current_user_task_array})=>{
    
     return(
         <div>
-        {taskArray.map((task) =>(
+        {current_user_task_array.map((task) =>(
             <TodoItem task = {task} taskData={taskData} settaskData={settaskData} taskArray={taskArray} settaskArray={settaskArray}/>
         )
             
